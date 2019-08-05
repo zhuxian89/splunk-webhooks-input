@@ -105,7 +105,7 @@ class LogRequestsInSplunkHandler(BaseHTTPRequestHandler):
         result['command'] = self.command
         result['client_address'] = self.client_address[0]
         result['client_port'] = self.client_address[1]
-
+        result['raw_json'] = body_json
         # Output the result
         self.server.output_results([result])
 
